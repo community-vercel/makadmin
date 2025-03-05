@@ -8,8 +8,6 @@ import { useEffect } from "react";
 const FullLayout = () => {
   const location = useLocation();
 
-
-
   
   useEffect(() => {
     window.scrollTo(0, 0); // Forces scroll to top on route change
