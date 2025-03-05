@@ -88,7 +88,6 @@ const AddServiceArea = () => {
             const responseData = await response.json(); // Convert response to JSON
             console.log('Response:', responseData);
             navigate(`/servicearea`);
-            navigator.to
         } catch (error) {
             console.error('Error:', error);
         }
