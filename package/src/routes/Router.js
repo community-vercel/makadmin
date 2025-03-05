@@ -1,49 +1,8 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
-import ServiceArea from "../views/ui/ServiceArea.js";
-import ServiceTables from "../components/dashboard/Service.js";
-import NewsTables from "../components/dashboard/News.js";
-import JobTables from "../components/dashboard/Jobs.js";
-import ContactTables from "../components/dashboard/Contact.js";
-import InquiryTables from "../components/dashboard/Inquiry.js";
-import AddServiceArea from "../components/dashboard/AddServiceArea.js";
-import AddService from "../components/dashboard/AddService.js";
-import AddNews from "../components/dashboard/AddNews.js";
-import AddContact from "../components/dashboard/AddContact.js";
-import UpdateServiceArea from "../components/dashboard/EditServiceArea.js";
-import UpdateNews from "../components/dashboard/EditNew.js";
-import Addadress from "../components/dashboard/AddContact.js";
-import FAQTables from "../components/dashboard/Faqs.js";
-import TestsTables from "../components/dashboard/Testimonal.js";
-import AddTest from "../components/dashboard/AddTest.js";
-import AddFaq from "../components/dashboard/Addfaq.js";
-import CertificateTables from "../components/dashboard/Certifications.js";
-import AddCertificate from "../components/dashboard/AddCertificate.js";
-import AddTeam from "../components/dashboard/AddTeam.js";
-import TeamTables from "../components/dashboard/Team.js";
-import AddSuService from "../components/dashboard/AddSusService.js";
-import SuServiceTables from "../components/dashboard/SuService.js";
-import ApprochTables from "../components/dashboard/OurApproch.js";
-import AddAppproch from "../components/dashboard/AddAppproch.js";
-import AddWhyUs from "../components/dashboard/Addwhyus.js";
-import AddSocial from "../components/dashboard/Addsocal.js";
-import SocialTables from "../components/dashboard/Sociamedia.js";
-import AddSetting from "../components/dashboard/AddSerting.js";
-import AddServiceSeo from "../components/dashboard/AddServiceMeta.js";
-import AddServiceAreaSeo from "../components/dashboard/AddServiceAreaMeta.js";
-import AddNewsSeo from "../components/dashboard/AddServiceNewsMeta.js";
-import AddSeo from "../components/dashboard/Addjopsseo.js";
-import HomeSliderTables from "../components/dashboard/HomeSlider.jsx";
-import AddHomeSlider from "../components/dashboard/AddHomeSlider.js";
-import Addjops from "../components/dashboard/Addjons.js";
 
-/****Layouts*****/
-const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
-
-/***** Pages ****/
-
-const Starter = lazy(() => import("../views/Starter.js"));
-const About = lazy(() => import("../views/About.js"));
+// Views (UI)
+const ServiceArea = lazy(() => import("../views/ui/ServiceArea.js"));
 const Alerts = lazy(() => import("../views/ui/Alerts"));
 const Badges = lazy(() => import("../views/ui/Badges"));
 const Buttons = lazy(() => import("../views/ui/Buttons"));
@@ -53,6 +12,51 @@ const Tables = lazy(() => import("../views/ui/Tables"));
 const Forms = lazy(() => import("../views/ui/Forms"));
 const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 
+// Dashboard Components
+const ServiceTables = lazy(() => import("../components/dashboard/Service.js"));
+const NewsTables = lazy(() => import("../components/dashboard/News.js"));
+const JobTables = lazy(() => import("../components/dashboard/Jobs.js"));
+const ContactTables = lazy(() => import("../components/dashboard/Contact.js"));
+const InquiryTables = lazy(() => import("../components/dashboard/Inquiry.js"));
+const FAQTables = lazy(() => import("../components/dashboard/Faqs.js"));
+const TestsTables = lazy(() => import("../components/dashboard/Testimonal.js"));
+const CertificateTables = lazy(() => import("../components/dashboard/Certifications.js"));
+const TeamTables = lazy(() => import("../components/dashboard/Team.js"));
+const SuServiceTables = lazy(() => import("../components/dashboard/SuService.js"));
+const ApprochTables = lazy(() => import("../components/dashboard/OurApproch.js"));
+const SocialTables = lazy(() => import("../components/dashboard/Sociamedia.js"));
+const HomeSliderTables = lazy(() => import("../components/dashboard/HomeSlider.jsx"));
+const UpdateServiceArea =lazy(() => import("../components/dashboard/EditServiceArea.js"));
+const UpdateNews=lazy(() => import( "../components/dashboard/EditNew.js"));
+
+// Add Components
+const AddServiceArea = lazy(() => import("../components/dashboard/AddServiceArea.js"));
+const AddService = lazy(() => import("../components/dashboard/AddService.js"));
+const AddNews = lazy(() => import("../components/dashboard/AddNews.js"));
+const AddContact = lazy(() => import("../components/dashboard/AddContact.js"));
+const Addadress = lazy(() => import("../components/dashboard/AddContact.js"));
+const AddTest = lazy(() => import("../components/dashboard/AddTest.js"));
+const AddFaq = lazy(() => import("../components/dashboard/Addfaq.js"));
+const AddCertificate = lazy(() => import("../components/dashboard/AddCertificate.js"));
+const AddTeam = lazy(() => import("../components/dashboard/AddTeam.js"));
+const AddSuService = lazy(() => import("../components/dashboard/AddSusService.js"));
+const AddAppproch = lazy(() => import("../components/dashboard/AddAppproch.js"));
+const AddWhyUs = lazy(() => import("../components/dashboard/Addwhyus.js"));
+const AddSocial = lazy(() => import("../components/dashboard/Addsocal.js"));
+const AddSetting = lazy(() => import("../components/dashboard/AddSerting.js"));
+const AddServiceSeo = lazy(() => import("../components/dashboard/AddServiceMeta.js"));
+const AddServiceAreaSeo = lazy(() => import("../components/dashboard/AddServiceAreaMeta.js"));
+const AddNewsSeo = lazy(() => import("../components/dashboard/AddServiceNewsMeta.js"));
+const AddSeo = lazy(() => import("../components/dashboard/Addjopsseo.js"));
+const AddHomeSlider = lazy(() => import("../components/dashboard/AddHomeSlider.js"));
+const Addjops = lazy(() => import("../components/dashboard/Addjons.js"));
+
+// Layout
+const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
+
+// Pages
+const Starter = lazy(() => import("../views/Starter.js"));
+const About = lazy(() => import("../views/About.js"));
 /*****Routes******/
 
 const ThemeRoutes = [
