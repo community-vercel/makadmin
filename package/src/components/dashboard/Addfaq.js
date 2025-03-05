@@ -26,7 +26,7 @@ const AddFaq= () => {
     useEffect(() => {
         const fetchServiceArea = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/faqs/${id}/`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}faqs/${id}/`);
                 const data = await response.json();
                 setServiceAreaData(data);
                 setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -75,10 +75,10 @@ const AddFaq= () => {
         try {
                 
 
-            const response =!serviceAreaData.id? await fetch(`http://127.0.0.1:8000/api/faqs/`, {
+            const response =!serviceAreaData.id? await fetch(`${process.env.REACT_APP_API_URL}faqs/`, {
                 method: 'POST',  // Use PUT method to update
                 body: formData,  // Attach formData
-            }):await fetch(`http://127.0.0.1:8000/api/faqs/${id}/`, {
+            }):await fetch(`${process.env.REACT_APP_API_URL}faqs/${id}/`, {
                 method: 'PUT',  // Use PUT method to update
                 body: formData,  // Attach formData
             });

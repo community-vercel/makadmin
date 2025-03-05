@@ -26,7 +26,7 @@ console.log("why us ",whyUsData)
     useEffect(() => {
         const fetchWhyUsData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/whyus/`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}whyus/`);
                 const data = await response.json();
                 setWhyUsData(data[0]);
                 setId(data[0].id)
@@ -67,7 +67,7 @@ console.log("why us ",whyUsData)
         };
     
         try {
-            const response = await fetch(id ? `http://127.0.0.1:8000/api/whyus/${id}/` : `http://127.0.0.1:8000/api/whyus/`, {
+            const response = await fetch(id ? `${process.env.REACT_APP_API_URL}whyus/${id}/` : `${process.env.REACT_APP_API_URL}whyus/`, {
                 method: id ? 'PUT' : 'POST',  // PUT for updating, POST for creating
                 headers: {
                     'Content-Type': 'application/json'  // Specify JSON content type

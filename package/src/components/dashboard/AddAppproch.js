@@ -23,7 +23,7 @@ const AddAppproch = () => {
        useEffect(() => {
            const fetchServiceArea = async () => {
                try {
-                   const response = await fetch(`http://127.0.0.1:8000/api/approch/${id}/`);
+                   const response = await fetch(`${process.env.REACT_APP_API_URL}approch/${id}/`);
                    const data = await response.json();
                    setServiceAreaData(data);
                    setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -84,12 +84,12 @@ const AddAppproch = () => {
     
 
         try {
-            const response =!serviceAreaData?.id?  await fetch('http://127.0.0.1:8000/api/approch/', {
+            const response =!serviceAreaData?.id?  await fetch(`${process.env.REACT_APP_API_URL}approch/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             }):
             
-            await fetch(`http://127.0.0.1:8000/api/approch/${id}/`, {
+            await fetch(`${process.env.REACT_APP_API_URL}approch/${id}/`, {
                 method: 'PUT',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

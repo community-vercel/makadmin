@@ -78,7 +78,7 @@ const AddServiceArea = () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/service-areas/', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}service-areas/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

@@ -23,7 +23,7 @@ const AddHomeSlider = () => {
        useEffect(() => {
            const fetchServiceArea = async () => {
                try {
-                   const response = await fetch(`http://127.0.0.1:8000/api/banners/${id}/`);
+                   const response = await fetch(`${process.env.REACT_APP_API_URL}banners/${id}/`);
                    const data = await response.json();
                    setServiceAreaData(data);
                    setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -85,12 +85,12 @@ const AddHomeSlider = () => {
     
 
         try {
-            const response =!serviceAreaData?.id?  await fetch('http://127.0.0.1:8000/api/banners/', {
+            const response =!serviceAreaData?.id?  await fetch(`${process.env.REACT_APP_API_URL}banners/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             }):
             
-            await fetch(`http://127.0.0.1:8000/api/banners/${id}/`, {
+            await fetch(`${process.env.REACT_APP_API_URL}banners/${id}/`, {
                 method: 'PUT',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

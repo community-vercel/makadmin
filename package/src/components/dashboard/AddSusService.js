@@ -22,7 +22,7 @@ const AddSuService = () => {
 
        useEffect(() => {
         // Fetch categories from your API endpoint
-        fetch('http://127.0.0.1:8000/api/service-categories')
+        fetch(`${process.env.REACT_APP_API_URL}service-categories`)
           .then((response) => response.json())
           .then((data) => setCategories(data))
           .catch((error) => console.error('Error fetching categories:', error));
@@ -31,7 +31,7 @@ const AddSuService = () => {
        useEffect(() => {
            const fetchServiceArea = async () => {
                try {
-                   const response = await fetch(`http://127.0.0.1:8000/api/services/${id}/`);
+                   const response = await fetch(`${process.env.REACT_APP_API_URL}services/${id}/`);
                    const data = await response.json();
                    setServiceAreaData(data);
                    setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -102,12 +102,12 @@ const AddSuService = () => {
     
 
         try {
-            const response =!serviceAreaData?.id?  await fetch('http://127.0.0.1:8000/api/services/', {
+            const response =!serviceAreaData?.id?  await fetch(`${process.env.REACT_APP_API_URL}services/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             }):
             
-            await fetch(`http://127.0.0.1:8000/api/services/${id}/`, {
+            await fetch(`${process.env.REACT_APP_API_URL}services/${id}/`, {
                 method: 'PUT',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

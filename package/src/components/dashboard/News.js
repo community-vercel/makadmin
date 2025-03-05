@@ -11,7 +11,7 @@ const NewsTables = () => {
  console.log(tableData)
    // Fetch Data from API
    useEffect(() => {
-     const getdata=(()=>{      fetch("http://127.0.0.1:8000/api/news-articles/")
+     const getdata=(()=>{      fetch(`${process.env.REACT_APP_API_URL}news-articles/`)
        .then(async response => {
          const data=await response.json()
        
@@ -30,7 +30,7 @@ const NewsTables = () => {
  
    // Delete Function
    const handleDelete = (id) => {
-     fetch(`http://127.0.0.1:8000/api/news-articles/${id}/`, {
+     fetch(`${process.env.REACT_APP_API_URL}news-articles/${id}/`, {
        method: "DELETE",
      })
        .then((response) => {

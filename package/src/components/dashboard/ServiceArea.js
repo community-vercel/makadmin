@@ -9,7 +9,7 @@ const ServiceAreaTables = () => {
 console.log(tableData)
   // Fetch Data from API
   useEffect(() => {
-    const getdata=(()=>{      fetch("http://127.0.0.1:8000/api/service-areas/")
+    const getdata=(()=>{      fetch(`${process.env.REACT_APP_API_URL}service-areas/`)
       .then(async response => {
         const data=await response.json()
       
@@ -28,7 +28,7 @@ console.log(tableData)
 
   // Delete Function
   const handleDelete = (id) => {
-    fetch(`http://127.0.0.1:8000/api/service-areas/${id}/`, {
+    fetch(`${process.env.REACT_APP_API_URL}service-areas/${id}/`, {
       method: "DELETE",
     })
       .then((response) => {

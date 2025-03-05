@@ -23,7 +23,7 @@ const AddSeo = () => {
        useEffect(() => {
            const fetchServiceArea = async () => {
                try {
-                   const response = await fetch(`http://127.0.0.1:8000/api/service-categories/${id}/`);
+                   const response = await fetch(`${process.env.REACT_APP_API_URL}service-categories/${id}/`);
                    const data = await response.json();
                    setServiceAreaData(data);
                    setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -83,12 +83,12 @@ const AddSeo = () => {
     
 
         try {
-            const response =!serviceAreaData?.id?  await fetch('http://127.0.0.1:8000/api/service-categories/', {
+            const response =!serviceAreaData?.id?  await fetch(`${process.env.REACT_APP_API_URL}service-categories/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             }):
             
-            await fetch(`http://127.0.0.1:8000/api/service-categories/${id}/`, {
+            await fetch(`${process.env.REACT_APP_API_URL}service-categories/${id}/`, {
                 method: 'PUT',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

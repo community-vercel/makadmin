@@ -54,7 +54,7 @@ const AddNews = () => {
        
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/news-articles/', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}news-articles/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
             });

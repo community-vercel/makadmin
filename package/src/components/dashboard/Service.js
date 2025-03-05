@@ -9,7 +9,7 @@ const ServiceTables = () => {
 console.log(tableData)
   // Fetch Data from API
   useEffect(() => {
-    const getdata=(()=>{      fetch("http://127.0.0.1:8000/api/service-categories/")
+    const getdata=(()=>{      fetch(`${process.env.REACT_APP_API_URL}service-categories/`)
       .then(async response => {
         const data=await response.json()
       
@@ -28,7 +28,7 @@ console.log(tableData)
 
   // Delete Function
   const handleDelete = (id) => {
-    fetch(`http://127.0.0.1:8000/api/service-categories/${id}/`, {
+    fetch(`${process.env.REACT_APP_API_URL}service-categories/${id}/`, {
       method: "DELETE",
     })
       .then((response) => {

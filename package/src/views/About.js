@@ -28,7 +28,7 @@ console.log("hi",serviceAreaData)
     useEffect(() => {
         const fetchServiceArea = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/About/`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}About/`);
                 const data = await response.json();
                 setServiceAreaData(data[0]);
                 setKeywords(data[0].meta_keywords ? data[0].meta_keywords.split(', ') : []);
@@ -84,7 +84,7 @@ console.log("hi",serviceAreaData)
 
      
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/About/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}About/`, {
                 method: 'POST',  // Use PUT method to update
                 body: formData,  // Attach formData
             });

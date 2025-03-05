@@ -30,7 +30,7 @@ const UpdateNews = () => {
     useEffect(() => {
         const fetchServiceArea = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/news-articles/${id}/`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}news-articles/${id}/`);
                 const data = await response.json();
                 setServiceAreaData(data);
                 setKeywords(data.meta_keywords ? data.meta_keywords.split(', ') : []);
@@ -78,7 +78,7 @@ const UpdateNews = () => {
 
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/news-articles/', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}news-articles/`, {
                 method: 'POST',  // Use PUT method to update
                 body: formData,  // Attach formData
             });
