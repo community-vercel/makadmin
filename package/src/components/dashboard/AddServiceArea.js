@@ -80,7 +80,7 @@ const AddServiceArea = () => {
         }
 
         try {
-            
+
             const response = await fetch(`${process.env.REACT_APP_API_URL}service-areas/`, {
                 method: 'POST',  // Specify the HTTP method
                 body: formData,  // Attach formData correctly
@@ -91,6 +91,7 @@ const AddServiceArea = () => {
             navigate(`/servicearea`);
         } catch (error) {
             console.error('Error:', error);
+            
         }
     };
 
