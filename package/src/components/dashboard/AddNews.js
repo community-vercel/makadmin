@@ -12,9 +12,11 @@ import {
     Input,
 } from "reactstrap";
 import { Editor } from '@tinymce/tinymce-react';
+import { useParams, useNavigate } from "react-router-dom";
 
 const AddNews = () => {
-   
+    const navigate = useNavigate();
+
     const [keywords, setKeywords] = useState([]);
     const [keywordInput, setKeywordInput] = useState("");
     const editorRef = useRef(null);

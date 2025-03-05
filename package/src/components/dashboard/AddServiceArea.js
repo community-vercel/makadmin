@@ -12,10 +12,12 @@ import {
     Input,
 } from "reactstrap";
 import { Editor } from '@tinymce/tinymce-react';
+import { useParams, useNavigate } from "react-router-dom";
 
 const AddServiceArea = () => {
     const [images, setImages] = useState([]);
     const [image, setImage] = useState([]);
+    const navigate = useNavigate();
 
     const [keywords, setKeywords] = useState([]);
     const [keywordInput, setKeywordInput] = useState("");

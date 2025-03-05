@@ -4,6 +4,7 @@ import user2 from "../../assets/images/users/user2.jpg";
 import user3 from "../../assets/images/users/user3.jpg";
 import user4 from "../../assets/images/users/user4.jpg";
 import user5 from "../../assets/images/users/user5.jpg";
+import { useNavigate } from "react-router-dom";
 
 const tableData = [
   {
@@ -51,8 +52,7 @@ const tableData = [
     weeks: "35",
     budget: "95K",
   },
-];
-import { useNavigate } from "react-router-dom";
+]
 
 const ContactTables = () => {
         
