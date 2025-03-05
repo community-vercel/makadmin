@@ -12,6 +12,7 @@ const FullLayout = () => {
     window.scrollTo(0, 0); // Forces scroll to top on route change
   }, [location.pathname]);
 
+  
   return (
     <main>
       {/********header**********/}
@@ -26,6 +27,7 @@ const FullLayout = () => {
           {/********Middle Content**********/}
           <Container className="p-4" fluid>
             <Outlet />
+
           </Container>
         </div>
       </div>
