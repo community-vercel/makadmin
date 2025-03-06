@@ -72,6 +72,11 @@ const ThemeRoutes = [
       { path:"/addsocial", exact: true, element: <AddSocial/> },
       { path:"/social", exact: true, element: <SocialTables/> },
 
+
+
+
+
+      
       { path: "/addservicearea", exact: true, element: <AddServiceArea /> },
       { path:"update-service-area/:id", exact: true, element: <UpdateServiceArea/> },
       { path:"updatenews/:id", exact: true, element: <UpdateNews/> },
