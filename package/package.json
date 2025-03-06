@@ -24,8 +24,6 @@
     "axios": "^1.7.9"
   },
 
-
-
   "scripts": {
     "start": "cross-env PORT=3003 react-scripts start",
     "build": "react-scripts build",
