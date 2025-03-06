@@ -7,6 +7,7 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
+    
     // Force reloading components when URL changes
     window.scrollTo(0, 0); 
   }, [location]);
