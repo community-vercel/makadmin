@@ -11,11 +11,11 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
-  <Suspense fallback={<Loader />}>
-    < Router >
+  <Router>
+    <Suspense fallback={<Loader />}>
       <App />
-    </ Router >
-  </Suspense>
+    </Suspense>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
