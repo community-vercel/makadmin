@@ -4,7 +4,7 @@ import {createRoot} from 'react-dom/client';
 import "./assets/scss/style.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import Loader from "./layouts/loader/Loader";
 
 const rootElement = document.getElementById('root');
