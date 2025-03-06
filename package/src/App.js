@@ -1,18 +1,15 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRoutes, useLocation } from "react-router-dom";
-import Themeroutes from "./routes/Router";
+import ThemeRoutes from "./routes/Router";
 
 const App = () => {
-  const routing = useRoutes(Themeroutes);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token")); // Check token
+  const routing = useRoutes(ThemeRoutes(isAuthenticated)); // Pass authentication status
   const location = useLocation();
 
-  
   useEffect(() => {
-
-    // Force reloading components when URL changes
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0); // Reset scroll position on route change
   }, [location]);
-
 
   return <div className="dark">{routing}</div>;
 };

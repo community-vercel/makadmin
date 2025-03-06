@@ -16,11 +16,19 @@ import {
 import Logo from "./Logo";
 import { ReactComponent as Security } from "../assets/images/logos/security.svg";
 import user1 from "../assets/images/users/user4.jpg";
-
+import { useState, useEffect } from "react";
+import { useRoutes, useLocation } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token")); // Check token
 
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Remove token from localStorage
+    setIsAuthenticated(false); // Mark user as unauthenticated
+    window.location.href = '/'; // Redirect to home page after login
+
+  };
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -104,7 +112,9 @@ const Header = () => {
             <DropdownItem divider />
             <DropdownItem>My Balance</DropdownItem>
             <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem>   <button onClick={handleLogout} style={{ padding: '10px', backgroundColor: '#f44336', color: 'white' }}>
+                Logout
+            </button></DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Collapse>
