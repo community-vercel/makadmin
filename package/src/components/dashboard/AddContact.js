@@ -69,7 +69,6 @@ console.log("serviceAreaData",serviceAreaData,image)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        
         const formData = new FormData();
         formData.append('meta_name', e.target.metaName.value);
         formData.append('meta_description', e.target.metaDescription.value);
