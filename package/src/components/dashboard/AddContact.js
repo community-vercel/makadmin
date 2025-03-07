@@ -65,7 +65,7 @@ console.log("hi",serviceAreaData)
         newKeywords.splice(index, 1);
         setKeywords(newKeywords);
     };
-
+console.log("serviceAreaData",serviceAreaData,image)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -76,7 +76,7 @@ console.log("hi",serviceAreaData)
         formData.append('sutitle', e.target.sutitle.value);
         formData.append('meta_keywords', keywords.join(','));
         formData.append('content',e.target.content.value );
-        if (serviceAreaData.image==='' || image.length>0) {
+        if (serviceAreaData.image==='' || image!=null) {
             formData.append('image', image); 
         }
        
