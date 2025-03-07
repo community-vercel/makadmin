@@ -80,7 +80,6 @@ console.log("serviceAreaData",serviceAreaData,image)
             formData.append('image', image); 
         }
        
-
      
         try {
             const response = await fetch(`${process.env.REACT_APP_API_URL}contact/`, {
